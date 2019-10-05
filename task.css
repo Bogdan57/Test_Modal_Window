@@ -1,7 +1,12 @@
 body {
-    font-family: Helvetica;
-    font-weight: 300;
+  font-family: Helvetica;
+  font-weight: 300;
+}
+
+  .is-open-modal {
+	  overflow: hidden;
   }
+
   .modal {
     display: none;
     justify-content: center;
@@ -26,6 +31,11 @@ body {
     font-size: 55px;
     cursor: pointer;
   }
+
+  .modal.is-open {
+    display: block;
+  }
+  
   
   .modal__content {
     width: 500px;
@@ -50,10 +60,7 @@ body {
   .btn_danger {
     background: red;
   }
-  .btn_success {
-    background: green;
-  }
-
+  
   .text {
     width: 50%;
     height: 200px;
@@ -65,11 +72,9 @@ body {
     margin-left: -160px;
   }
 
-  .insidetext {
-    width: 50%;
+  .insidetext {  
     height: 200px;
     font-size: 25px;
-    margin-top: 110px;
-    margin-left: -220px;
-    display: flex;
+    position: absolute;
+    top: 220px;
   }
