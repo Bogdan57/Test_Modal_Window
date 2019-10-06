@@ -1,40 +1,23 @@
-let modal_main = document.querySelector('#modal_main');
-let modal__close = document.querySelectorAll('div.modal__close');
-let modal_success = document.querySelector('#modal_success');
-modal_main.className = 'modal modal_active';
+let modal = document.getElementById('myModal');
 
-modal__close[0].onclick = function(){
-    modal_main.className = 'modal'
+
+let btn = document.getElementById("myBtn");
+
+
+let span = document.getElementsByClassName("close")[0];
+
+
+btn.onclick = function() {
+    modal.style.display = "block";
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${window.scrollY}px`;
 }
-show_success.onclick = function(){
-    modal_main.className = 'modal'
-    modal_success.className = 'modal modal_active';
+
+
+span.onclick = function() {
+    modal.style.display = "none";
+    document.body.style.position = '';
+    document.body.style.top = '';
 }
 
-show_success.onclick = function(){
-	function showModal(id){
-		$(document.body).addClass('is-open-modal');
-		$(id).addClass('is-open');
-		console.log(id);
-	}
-	function hideModals(){
-		$(document.body).removeClass('is-open-modal');
-		$('.modal').removeClass('is-open');
-	}
 
-	$(".modal-open").on('click', function(e){
-		console.log(e);
-		showModal('#modal');
- });
-	
-	$(document).on('click', function(e){
-		if (!(
-		($(e.target).parents('.modal__content').length)
-		||	($(e.target).hasClass('modal__content'))
-		||	($(e.target).hasClass('modal-open')))
-		) {
-			hideModals();
-		}
-	});
-	
-};

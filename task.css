@@ -1,80 +1,90 @@
 body {
-  font-family: Helvetica;
-  font-weight: 300;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-  .is-open-modal {
-	  overflow: hidden;
-  }
+#myBtn {
+  background-color: rgb(240, 98, 98);
+  color: white;
+  padding: 12px 16px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  width: 180px;
+}
 
-  .modal {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1;
+    padding-top: 100px; 
     left: 0;
     top: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-  }
-  
-  .modal_active {
-    display: flex;
-  }
-  
-  .modal__close_times {
-    position: absolute;
-    color: red;
-    right: 5px;
-    top: -7px;
-    font-size: 55px;
-    cursor: pointer;
-  }
+    width: 100%; 
+    height: 100%; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+    overflow: hidden;
+}   
 
-  .modal.is-open {
-    display: block;
-  }
-  
-  
-  .modal__content {
-    width: 500px;
-    height: 500px;
-    overflow: auto;
-    background: #fff;
+
+.modal-content {
     position: relative;
-    padding: 20px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .btn {
-    text-decoration: none;
-    color: whitesmoke;
-    padding: 10px 20px;
-    border-radius: 2px;
-  }
-  
-  .btn_danger {
-    background: red;
-  }
-  
-  .text {
-    width: 50%;
-    height: 200px;
-    white-space: nowrap;
-    color: black;
-    font-weight: bold;
-    font-size: 55px;
-    margin-top: -30px;
-    margin-left: -160px;
-  }
+    background-color: white;
+    margin: auto;
+    width: 30%;
+    height: 300px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
 
-  .insidetext {  
-    height: 200px;
-    font-size: 25px;
-    position: absolute;
-    top: 220px;
-  }
+
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+
+.close {
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.lorem {
+  position: absolute;
+  top: 50px;
+  right:35%;
+  white-space: nowrap;
+  font-size:35px;
+
+}
+
+.modal-header {
+    padding: 20px 16px;
+    background-color: white;
+    color: black;
+}
+
+.modal-body {
+  position: absolute;
+  padding: 20px 16px;
+  top: 100px;
+}
